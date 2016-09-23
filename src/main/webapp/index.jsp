@@ -4,7 +4,12 @@
 	</head>
 	<body>
 	<div class="container">
-		<h3>Teste</h3>
-	 </div>  
+		<div class="well well-sm">
+		  	<center><h2><b>Pedidos</b></h2></center>
+		</div>
+		<div class="jumbotron" >
+			<%@ include file="form_teste.jsp"%>
+		</div>
+	</div>  
 	</body>
 </html>
