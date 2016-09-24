@@ -4,11 +4,11 @@
 	</head>
 	<body>
 	<div class="container">
-		<div class="well well-sm">
-		  	<center><h2><b>Pedidos</b></h2></center>
-		</div>
-		<div class="jumbotron" >
-			<%@ include file="form_teste.jsp"%>
+		<div class="panel panel-default">
+		  <div class="panel-heading"><i class="fa fa-user"></i> Pedidos</div>
+		  <div class="panel-body">
+			<%@ include file="form_teste.jsp" %>
+		  </div>
 		</div>
 	</div>  
 	</body>
