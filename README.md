@@ -6,6 +6,7 @@ Muita coisa precisa ser feito ainda, mas o projeto está em andamento...
 Divisão provisória das telas a serem construidas:
 
 ------> Telefonista e Garçom: Juntar visões
+
      -> Cadastro de Pedido
      -> Alteração de Pedido
      
@@ -13,6 +14,7 @@ Divisão provisória das telas a serem construidas:
      -> Pedidos de entregas
 
 ------> Cozinheiro e Garçom de bebidas: Juntar visões
+
      -> Pedidos a Atender: Garçom Bebida
      -> Pedidos à preparar
      
@@ -25,6 +27,7 @@ Divisão provisória das telas a serem construidas:
 	
 
 ------> Operador de caixa
+
      -> Entregas
      -> Ecaminhar Entregas 1
      -> Ecaminhar Entregas 2
@@ -34,11 +37,13 @@ Divisão provisória das telas a serem construidas:
 
 
 ------> Manobrista
+
      -> Estacionamento: Principal
      -> Estacionamento: Modais(Entrada, Histório, Retirada, Recibo)
 
 
 ------> Gerentes
+
      -> Relatório de Eficiência
      -> Relatório de Devoluções
      
