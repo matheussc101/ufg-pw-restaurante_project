@@ -4,6 +4,7 @@
 	</head>
 	<body>
 	<div class="container">
+<<<<<<< HEAD
 		<div ng-view></div>  
 	</div>
 	<script src="appt.js"></script>
@@ -166,5 +167,14 @@
     		</script>
 
 	
+=======
+		<div class="panel panel-default">
+		  <div class="panel-heading"><i class="fa fa-user"></i> Pedidos</div>
+		  <div class="panel-body">
+			<%@ include file="form_teste.jsp" %>
+		  </div>
+		</div>
+	</div>  
+>>>>>>> 6def15cf0f5445ddb8c1319f5466aa0aaff6b508
 	</body>
 </html>
