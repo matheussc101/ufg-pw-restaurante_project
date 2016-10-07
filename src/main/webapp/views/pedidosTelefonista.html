@@ -1,10 +1,5 @@
 <div class="page-header">
-<div ng-init="pedidos = [{numero: 1, descricao: 'Arroz temperado', tempoEspera: '00:30:39', mesa: 13 },
-                         {numero: 2, descricao: 'Feijoada', tempoEspera: '00:23:30', mesa: 34},
-                         {numero: 3, descricao: 'Arroz branco e feijão tropeiro', tempoEspera: '00:18:40', mesa: 3},
-                         {numero: 4, descricao: 'Suco de laranja', tempoEspera: '00:15:03', mesa: 4 },
-                         {numero: 5, descricao: 'Vinho tinto', tempoEspera: '00:10:03', mesa: 10 }]"></div>
-
+<div ng-controller="pedidosTelefonista">
    <div class="well well-sm">
 		  	<center><h2><b class="fa fa-cutlery"> Pedidos</b></h2></center>
 		</div>
@@ -24,9 +19,9 @@
 			  
 			  <span class="col-md-2 col-xs-12" ng-class="{active: activetab == '/cadastrar'}">
 			  	
-			 	 <a class="btn btn-default"  href="#/cadastrar"><i class="fa fa-plus-circle" aria-hidden="true"></i> Novo Pedido</a>
+			 	 <a class="btn btn-default"  href="#/cadastrarPedidosTelefonista"><i class="fa fa-plus-circle" aria-hidden="true"></i> Novo Pedido</a>
 			  </span>
-			  
+			  			  
 			</div><!-- /.row -->
 			
 			<div class="table-responsive">
@@ -34,22 +29,23 @@
 				  <thead style="background: #F5F5F5;">
 					    <tr>
 					      <th><center>#</center></th>
-					      <th><center>Descrição</center></th>
 					      <th><center>Tempo de Espera</center></th>
-					      <th><center>Mesa</center></th>
+					      <th><center>Telefone</center></th>
+					      <th><center>Descrição</center></th>
 					      <th width="160px"><center>Ações</center></th>
 					    </tr>
 					  </thead>
 					  <tbody>
 					  <tr ng-repeat="pedido in pedidos | filter:pesquisa">
 					  	<td><center>{{pedido.numero}}</center></td>
+						<td><center>{{pedido.tempoEspera}}</center></td>
+			    		<td><center>{{pedido.telefone}}</center></td>
 			    		<td><center>{{pedido.descricao}}</center></td>
-			    		<td><center>{{pedido.tempoEspera}}</center></td>
-			    		<td><center>{{pedido.mesa}}</center></td>
-			    		<td>
+			    		<td width="250px">
 			    			<center>
-						      	<a href="#/alterar" ng-class="{active: activetab == '/alterar'}" class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Alterar</a>
-						      	<a type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modalCancelar"><i class="fa fa-times-circle" aria-hidden="true"></i> Cancelar</a>
+			    				<a class="btn btn-success btn-xs" ng-click="deletar(pedido, $index)"><i class="fa fa-check-square-o" aria-hidden="true"></i> Finalizar</a>
+						      	<a href="#/alterarPedidosTelefonista" class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Alterar</a>
+						      	<a type="button" class="btn btn-danger btn-xs" ng-click="cancelar(pedido)" data-toggle="modal" data-target="#modalCancelar"><i class="fa fa-times-circle" aria-hidden="true"></i> Cancelar</a>
 						    </center>
 						</td>
 			    	  </tr>					  
@@ -71,21 +67,22 @@
       </div>
       <div class="modal-body">
       	<div class="box">
-      		<form class="form-horizontal">
+      		<form class="form-horizontal" name="formCancelar">
 			  <fieldset>
 			    <legend>Permissão Superior</legend>
 			    			    
 			    <div class="form-group">
 			      <label for="motivo" class="col-lg-2 control-label">Descrição</label>
 			      <div class="col-lg-10">
-			        <textarea class="form-control" rows="2" id="motivo" disabled>Suco de laranja</textarea>
+			        <textarea class="form-control" rows="2" ng-model="descPedidoCancelar" disabled></textarea>
 			      </div>
-			    </div>			    
-			    
+			    </div>	
+			    			    
 			    <div class="form-group">
 			      <label for="motivo" class="col-lg-2 control-label">Motivo</label>
 			      <div class="col-lg-10">
-			        <textarea class="form-control" rows="3" id="motivo"></textarea>
+			        <textarea name="motivoModal" ng-model="motivoModal" class="form-control" rows="3" id="motivoModal" required></textarea>
+			        <input type="text" ng-model="idPedidoCancelar" ng-bind="motivoModal">
 			        <span class="help-block">Digite detalhadamente o motivo do cancelamento.</span>
 			      </div>
 			    </div>
@@ -93,7 +90,7 @@
 			    <div class="form-group">
 			      <label for="senha" class="col-lg-2 control-label">Senha</label>
 			      <div class="col-lg-10">
-			        <input type="password" class="form-control" id="senha" placeholder="senha">
+			        <input type="password" ng-model="senhaModal" name="senhaModal" class="form-control" id="senhaModal" placeholder="senha" required>
 			      </div>
 			    </div>
 			    
@@ -104,9 +101,10 @@
       </div>
       <div class="modal-footer">
       	<a class="btn btn-default" data-dismiss="modal"><i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
-        <a class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times-circle" aria-hidden="true"></i> Confirmar</a>
+        <a class="btn btn-danger" data-dismiss="modal" id="btConfirmaCancelamento" ng-disabled="formCancelar.motivoModal.$invalid && formCancelar.senhaModal.$invalid" ng-click="deletar(idPedidoCancelar)"><i class="fa fa-times-circle" aria-hidden="true"></i> Confirmar</a>
       </div>
     </div>
 
   </div>
+</div>
 </div>

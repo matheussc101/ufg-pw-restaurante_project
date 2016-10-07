@@ -1,61 +1,48 @@
 <div class="page-header">
-<div ng-init="pedidos = [{numero: 1, descricao: 'Arroz temperado', tempoEspera: '00:30:39', mesa: 13 },
-                         {numero: 2, descricao: 'Feijoada', tempoEspera: '00:23:30', mesa: 34},
-                         {numero: 3, descricao: 'Arroz branco e feijão tropeiro', tempoEspera: '00:18:40', mesa: 3},
-                         {numero: 4, descricao: 'Suco de laranja', tempoEspera: '00:15:03', mesa: 4 },
-                         {numero: 5, descricao: 'Vinho tinto', tempoEspera: '00:10:03', mesa: 10 }]"></div>
+<div ng-init="entregas = [{numero: 1, telefonista: 'Fernanda Almeida', valor: '39,00', formaPgto: 'Cartao', troco:' - '},
+                         {numero: 4, telefonista: 'joana Carvalho', valor: '76,80', formaPgto: 'Dinheiro', troco:'23,20'},
+                         {numero: 6, telefonista: 'joana Carvalho', valor: '130,90', formaPgto: 'cartao', troco:' - '},
+                         {numero: 16, telefonista: 'Júlia Lara', valor: '45,00', formaPgto: 'Dinheiro', troco:'55,00'},
+                         {numero: 20, telefonista: 'Fernanda Almeida', valor: '205,90', formaPgto: 'cartao', troco:' - '}]"></div>
 
    <div class="well well-sm">
-		  	<center><h2><b class="fa fa-cutlery"> Pedidos</b></h2></center>
+		  	<center><h2><b class="fa fa-motorcycle"> Entregas</b></h2></center>
 		</div>
 		<div class="jumbotron" style="background:white; border: solid; border-width: 1px; border-color: lightgray;">
-			
-			<div class="row" style="margin-bottom: 30px;">
-			
-			  <div class="col-md-10 col-xs-12">
-			    <div class="input-group">
-			      
-			      <input type="text" id="pesquisa" ng-model="pesquisa" class="form-control" placeholder="Pesquisa">
-			      <span class="input-group-btn" >
-			        <button class="btn" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
-			      </span>
-			    </div><!-- /input-group -->
-			  </div><!-- /.col-lg-6 -->
-			  
-			  <span class="col-md-2 col-xs-12" ng-class="{active: activetab == '/cadastrar'}">
-			  	
-			 	 <a class="btn btn-default"  href="#/cadastrar"><i class="fa fa-plus-circle" aria-hidden="true"></i> Novo Pedido</a>
-			  </span>
-			  
-			</div><!-- /.row -->
 			
 			<div class="table-responsive">
 				<table class="table table-hover">
 				  <thead style="background: #F5F5F5;">
 					    <tr>
+					      <th><center><i class="fa fa-check-square-o" aria-hidden="true"></i></center></th>
 					      <th><center>#</center></th>
-					      <th><center>Descrição</center></th>
-					      <th><center>Tempo de Espera</center></th>
-					      <th><center>Mesa</center></th>
-					      <th width="160px"><center>Ações</center></th>
+					      <th><center>Telefonista</center></th>
+					      <th><center>Valor</center></th>
+					      <th><center>Forma de Pagamento</center></th>
+					      <th><center>Troco</center></th>
 					    </tr>
 					  </thead>
 					  <tbody>
-					  <tr ng-repeat="pedido in pedidos | filter:pesquisa">
-					  	<td><center>{{pedido.numero}}</center></td>
-			    		<td><center>{{pedido.descricao}}</center></td>
-			    		<td><center>{{pedido.tempoEspera}}</center></td>
-			    		<td><center>{{pedido.mesa}}</center></td>
-			    		<td>
-			    			<center>
-						      	<a href="#/alterar" ng-class="{active: activetab == '/alterar'}" class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Alterar</a>
-						      	<a type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modalCancelar"><i class="fa fa-times-circle" aria-hidden="true"></i> Cancelar</a>
-						    </center>
-						</td>
+					  <tr ng-repeat="entrega in entregas">
+					  	<td><center><input type="checkbox" value="1" checked="checked"></center></td>
+					  	<td><center>{{entrega.numero}}</center></td>
+			    		<td><center>{{entrega.telefonista}}</center></td>
+			    		<td><center>{{entrega.valor}}</center></td>
+			    		<td><center>{{entrega.formaPgto}}</center></td>
+			    		<td><center>{{entrega.troco}}</center></td>			    		
 			    	  </tr>					  
 					  </tbody>
 					</table>			
+							
 			</div>
+			
+			<hr>			
+			<div class="row" style="float:right;">
+				<span class="col-md-12">
+					<a href="#/entregas" class="btn btn-default"> <i class="fa fa-reply" aria-hidden="true"></i> Voltar</a>
+		        	<a href="#/encaminharEntregasConfirmacao" class="btn btn-primary"><i class="fa fa-motorcycle" aria-hidden="true"></i> Confirmar</a>
+	        	</span>
+	        </div>		
 	</div>
 </div>
 
