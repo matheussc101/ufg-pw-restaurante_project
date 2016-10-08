@@ -1,12 +1,6 @@
 body{
-  background: url(../../images/fundo5.jpg) no-repeat center center fixed;
-  background-size: cover; /*Css padrão*/
-  -webkit-background-size: cover; /*Css safari e chrome*/
-  -moz-background-size: cover; /*Css firefox*/
-  -ms-background-size: cover; /*Css IE não use mer#^@%#*/
-  -o-background-size: cover; /*Css Opera*/
   
-  font-size: 18px;
+  font-size: 16px;
   padding-top: 40px;
 }
 
@@ -20,17 +14,7 @@ body{
   
 }
 
-.navbar {
-	border-width: 0px;
-	border-radius: 4px;
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cecece+0,3a3a3a+100 */
-background: #cecece; /* Old browsers */
-background: -moz-linear-gradient(top,  #cecece 0%, #3a3a3a 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  #cecece 0%,#3a3a3a 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  #cecece 0%,#3a3a3a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cecece', endColorstr='#3a3a3a',GradientType=0 ); /* IE6-9 */
 
-}
 div.box { 
     padding          : 10px;
     border-radius    : 6px;
