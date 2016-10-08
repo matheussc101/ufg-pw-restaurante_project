@@ -12,7 +12,7 @@ appt.config(function($routeProvider, $locationProvider)
    
    .when('/cadastrar', {
       templateUrl : 'views/cadastrarPedido.html',
-      controller  : 'cadastrarPedidos',
+      controller  : 'alterarPedidos',
    }) 
    
    .when('/alterar', {
