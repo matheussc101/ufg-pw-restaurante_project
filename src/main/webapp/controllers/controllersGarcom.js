@@ -29,3 +29,7 @@ appt.controller('encaminharEntregas', function($rootScope, $location) {
 appt.controller('encaminharEntregasConfirmacao', function($rootScope, $location) {
 	   $rootScope.activetab = $location.path();
 });
+
+appt.controller('telefonista', function($rootScope, $location) {
+	   
+});
