@@ -1,6 +1,8 @@
+
 <%@ include file="/views/header.html"%>
 <%@ include file="/views/barra_de_menus.html"%>
-		<title>Restaurante</title>
+
+<title>Restaurante</title>
 	</head>
 	<body>
 	<div class="container">

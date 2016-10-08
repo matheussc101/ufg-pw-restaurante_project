@@ -14,3 +14,5 @@
 0:0:0:0:0:0:0:1 - - [07/Oct/2016:00:26:04 -0300] "GET /RESTAURANTE_PROJECT/controllers/controllersGarcom.js HTTP/1.1" 200 1055 http-bio-9898-exec-5 160
 0:0:0:0:0:0:0:1 - - [07/Oct/2016:00:26:04 -0300] "GET /RESTAURANTE_PROJECT/appt.js HTTP/1.1" 304 - http-bio-9898-exec-4 164
 0:0:0:0:0:0:0:1 - - [07/Oct/2016:00:26:35 -0300] "GET /RESTAURANTE_PROJECT/views/alterarPedido.html HTTP/1.1" 200 7708 http-bio-9898-exec-4 36
+0:0:0:0:0:0:0:1 - - [07/Oct/2016:23:54:25 -0300] "GET /RESTAURANTE_PROJECT/ HTTP/1.1" 200 6383 http-bio-9898-exec-2 10165
+0:0:0:0:0:0:0:1 - - [07/Oct/2016:23:54:25 -0300] "GET /RESTAURANTE_PROJECT/ HTTP/1.1" 200 6383 http-bio-9898-exec-1 9958
