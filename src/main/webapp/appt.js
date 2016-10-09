@@ -60,6 +60,23 @@ appt.config(function($routeProvider, $locationProvider)
       templateUrl : 'views/alterarPedidosTelefonista.html',
       controller  : 'telefonista',
    }) 
+   // para a rota '/', carregaremos o template home.html e o controller 'HomeCtrl'
+   .when('/cadastrodeCardapio', {
+      templateUrl : 'views/cadastrodeCardapio-jer.html',
+      controller  : 'cadastrodeCardapio',
+   }) 
+   
+   // para a rota '/', carregaremos o template home.html e o controller 'HomeCtrl'
+   .when('/pedidosPreparar', {
+      templateUrl : 'views/pedidosPreparar-jer.html',
+      controller  : 'pedidosPreparar',
+   })
+   
+   // para a rota '/', carregaremos o template home.html e o controller 'HomeCtrl'
+   .when('/estacionamento', {
+      templateUrl : 'views/estacionamento.html',
+      controller  : 'estacionamento',
+   })
  
    // para a rota '/', carregaremos o template home.html e o controller 'HomeCtrl'
    .when('/cadastrarFuncionario', {
