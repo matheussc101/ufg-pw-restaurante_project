@@ -60,54 +60,8 @@ appt.config(function($routeProvider, $locationProvider)
       templateUrl : 'views/alterarPedidosTelefonista.html',
       controller  : 'telefonista',
    }) 
-   // para a rota '/', carregaremos o template home.html e o controller 'HomeCtrl'
-   .when('/cadastrodeCardapio', {
-      templateUrl : 'views/cadastrodeCardapio-jer.html',
-      controller  : 'cadastrodeCardapio',
-   }) 
-   
-   // para a rota '/', carregaremos o template home.html e o controller 'HomeCtrl'
-   .when('/pedidosPreparar', {
-      templateUrl : 'views/pedidosPreparar-jer.html',
-      controller  : 'pedidosPreparar',
-   })
-   
-   // para a rota '/', carregaremos o template home.html e o controller 'HomeCtrl'
-   .when('/estacionamento', {
-      templateUrl : 'views/estacionamento.html',
-      controller  : 'estacionamento',
-   })
  
-   // para a rota '/', carregaremos o template home.html e o controller 'HomeCtrl'
-   .when('/cadastrarFuncionario', {
-      templateUrl : 'views/cadastrarFuncionario.html',
-      controller  : 'cadastrarFuncionario',
-   })
-
-   // para a rota '/', carregaremos o template home.html e o controller 'HomeCtrl'
-   .when('/listarFuncionario', {
-      templateUrl : 'views/listarFuncionario.html',
-      controller  : 'listarFuncionario',
-   })
-
-   // para a rota '/', carregaremos o template home.html e o controller 'HomeCtrl'
-   .when('/alterarFuncionario', {
-       templateUrl : 'views/alterarFuncionario.html',
-       controller  : 'alterarFuncionario',
-   })
-
-   // para a rota '/', carregaremos o template home.html e o controller 'HomeCtrl'
-   .when('/relatorioDevolucoes', {
-      templateUrl : 'views/relatorioDevolucoes.html',
-      controller  : 'relatorioDevolucoes',
-
-   })
-   // para a rota '/', carregaremos o template home.html e o controller 'HomeCtrl'
-   .when('/relatorioEficiencia', {
-       templateUrl : 'views/relatorioEficiencia.html',
-       controller  : 'relatorioEficiencia',
-
-   })
-       // caso não seja nenhum desses, redirecione para a rota '/'
+ 
+   // caso não seja nenhum desses, redirecione para a rota '/'
    .otherwise ({ redirectTo: '/' });
-})
+});
