@@ -36,7 +36,6 @@ appt.controller('encaminharEntregas', function($rootScope, $location) {
 
 appt.controller('encaminharEntregasConfirmacao', function($rootScope, $location) {
 	   $rootScope.activetab = $location.path();
-});
 
 appt.controller('telefonista', function($rootScope, $location) {
 	   
@@ -49,6 +48,17 @@ appt.controller('controllersGerenciais', function($rootScope, $location) {
 
 
 
+appt.controller('cadastrodeCardapio', function($rootScope, $location) {
+	   $rootScope.activetab = $location.path();
+});
+
+appt.controller('pedidosPreparar', function($rootScope, $location) {
+	   $rootScope.activetab = $location.path();
+});
+
+appt.controller('estacionamento', function($rootScope, $location) {
+	   $rootScope.activetab = $location.path();
+});
 appt.controller('relatorioDevolucoes', function($rootScope, $location) {
     $rootScope.activetab = $location.path();
     angular.module('dateInputExample', [])
