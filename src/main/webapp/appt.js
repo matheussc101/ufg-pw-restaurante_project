@@ -61,7 +61,36 @@ appt.config(function($routeProvider, $locationProvider)
       controller  : 'telefonista',
    }) 
  
- 
-   // caso não seja nenhum desses, redirecione para a rota '/'
+   // para a rota '/', carregaremos o template home.html e o controller 'HomeCtrl'
+   .when('/cadastrarFuncionario', {
+      templateUrl : 'views/cadastrarFuncionario.html',
+      controller  : 'cadastrarFuncionario',
+   })
+
+   // para a rota '/', carregaremos o template home.html e o controller 'HomeCtrl'
+   .when('/listarFuncionario', {
+      templateUrl : 'views/listarFuncionario.html',
+      controller  : 'listarFuncionario',
+   })
+
+   // para a rota '/', carregaremos o template home.html e o controller 'HomeCtrl'
+   .when('/alterarFuncionario', {
+       templateUrl : 'views/alterarFuncionario.html',
+       controller  : 'alterarFuncionario',
+   })
+
+   // para a rota '/', carregaremos o template home.html e o controller 'HomeCtrl'
+   .when('/relatorioDevolucoes', {
+      templateUrl : 'views/relatorioDevolucoes.html',
+      controller  : 'relatorioDevolucoes',
+
+   })
+   // para a rota '/', carregaremos o template home.html e o controller 'HomeCtrl'
+   .when('/relatorioEficiencia', {
+       templateUrl : 'views/relatorioEficiencia.html',
+       controller  : 'relatorioEficiencia',
+
+   })
+       // caso não seja nenhum desses, redirecione para a rota '/'
    .otherwise ({ redirectTo: '/' });
-});
+})
