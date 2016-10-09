@@ -1,6 +1,8 @@
+
 <%@ include file="/views/header.html"%>
 <%@ include file="/views/barra_de_menus.html"%>
-		<title>Restaurante</title>
+
+<title>Restaurante</title>
 	</head>
 	<body>
 	<div class="container">
@@ -101,69 +103,31 @@
 			 $("#troco").val(valorRecebido - 130.00);
 		 }
 		 
-		 var map;
-		 var infoWindow;
+		 $("body").vegas({
+			    delay: 30000,
+			    timer: false,
+			    shuffle: true,
+			    firstTransition: 'fade',
+			    firstTransitionDuration: 5000,
+			    animation: 'random',
+			    transitionDuration: 5000,
+			    slides: [
+			        { src: 'images/fundo.jpg' },
+			        { src: 'images/fundo9.jpg' },
+			        { src: 'images/fundo10.jpg' },
+			        { src: 'images/fundo8.jpg' }
+			    ]
+			});
+		 
 
-		 function initMap() {
-		   map = new google.maps.Map(document.getElementById('map'), {
-		     zoom: 5,
-		     center: {lat: 24.886, lng: -70.268},
-		     mapTypeId: google.maps.MapTypeId.TERRAIN
-		   });
-
-		   // Define the LatLng coordinates for the polygon.
-		   var triangleCoords = [
-		       {lat: 25.774, lng: -80.190},
-		       {lat: 18.466, lng: -66.118},
-		       {lat: 32.321, lng: -64.757}
-		   ];
-
-		   // Construct the polygon.
-		   var bermudaTriangle = new google.maps.Polygon({
-		     paths: triangleCoords,
-		     strokeColor: '#FF0000',
-		     strokeOpacity: 0.8,
-		     strokeWeight: 3,
-		     fillColor: '#FF0000',
-		     fillOpacity: 0.35
-		   });
-		   bermudaTriangle.setMap(map);
-
-		   // Add a listener for the click event.
-		   bermudaTriangle.addListener('click', showArrays);
-
-		   infoWindow = new google.maps.InfoWindow;
-		 }
-
-		 /** @this {google.maps.Polygon} */
-		 function showArrays(event) {
-		   // Since this polygon has only one path, we can call getPath() to return the
-		   // MVCArray of LatLngs.
-		   var vertices = this.getPath();
-
-		   var contentString = '<b>Bermuda Triangle polygon</b><br>' +
-		       'Clicked location: <br>' + event.latLng.lat() + ',' + event.latLng.lng() +
-		       '<br>';
-
-		   // Iterate over the vertices.
-		   for (var i =0; i < vertices.getLength(); i++) {
-		     var xy = vertices.getAt(i);
-		     contentString += '<br>' + 'Coordinate ' + i + ':<br>' + xy.lat() + ',' +
-		         xy.lng();
-		   }
-
-		   // Replace the info window's content and position.
-		   infoWindow.setContent(contentString);
-		   infoWindow.setPosition(event.latLng);
-
-		   infoWindow.open(map);
-		 }
+		   
+		 
+		 $("body").vegas('play');
+		 
 			</script>
 			
 			
-			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPmpL5-SZkkVcnH1H1kVv0-AXt6sLFk0g&signed_in=true&callback=initMap"
-        async defer>
-    		</script>
+			 
 
 	
 	</body>
